@@ -1,4 +1,6 @@
-#Dockerfile
-FROM debian
-RUN apt-get update
-RUN apt-get install -y cowsay fortune
+# Usaremos una imagen de node.js
+
+FROM node:latest
+COPY ./index.js /index.js
+EXPOSE 3000
+CMD ["node","/index.js"]
